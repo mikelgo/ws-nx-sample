@@ -1,0 +1,43 @@
+{
+  "name": "features-shopping",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/features/shopping/src",
+  "prefix": "nx-test",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/features/shopping"],
+      "options": {
+        "project": "libs/features/shopping/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/features/shopping/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/features/shopping/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/features/shopping"],
+      "options": {
+        "jestConfig": "libs/features/shopping/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/features/shopping/**/*.ts",
+          "libs/features/shopping/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

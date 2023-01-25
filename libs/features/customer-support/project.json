@@ -1,0 +1,43 @@
+{
+  "name": "features-customer-support",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/features/customer-support/src",
+  "prefix": "nx-test",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/features/customer-support"],
+      "options": {
+        "project": "libs/features/customer-support/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/features/customer-support/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/features/customer-support/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/features/customer-support"],
+      "options": {
+        "jestConfig": "libs/features/customer-support/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/features/customer-support/**/*.ts",
+          "libs/features/customer-support/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

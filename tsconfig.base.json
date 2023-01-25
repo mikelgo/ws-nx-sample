@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-test/features/admin": ["libs/features/admin/src/index.ts"],
+      "@nx-test/features/customer": ["libs/features/customer/src/index.ts"],
+      "@nx-test/features/customer-support": [
+        "libs/features/customer-support/src/index.ts"
+      ],
+      "@nx-test/features/shopping": ["libs/features/shopping/src/index.ts"],
+      "@nx-test/features/shopping-cart": [
+        "libs/features/shopping-cart/src/index.ts"
+      ],
+      "@nx-test/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
